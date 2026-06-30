@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "falseknees-search",
+  "name": "false-knees-search",
   "main": "src/worker.js",
   "compatibility_date": "2026-06-30",
   "assets": {
