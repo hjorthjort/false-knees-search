@@ -1,0 +1,23 @@
+{
+  "name": "falseknees-search",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "scrape": "node scripts/build-index.mjs",
+    "scrape:latest": "node scripts/build-index.mjs --refresh-pages --refresh-images --refresh-ocr --latest 4",
+    "scrape:full": "node scripts/build-index.mjs --refresh-pages",
+    "scrape:sample": "node scripts/build-index.mjs --limit 12 --concurrency 2",
+    "deploy": "wrangler deploy",
+    "serve": "node scripts/server.mjs",
+    "smoke": "node scripts/smoke-test.mjs"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "wrangler": "^4.105.0"
+  }
+}

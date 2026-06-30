@@ -1,0 +1,9 @@
+node_modules/
+.DS_Store
+
+# Generated scrape/cache output. Public search assets are committed so the
+# cloud host can deploy without native OCR tooling.
+/data/
+
+# Local run logs
+*.log

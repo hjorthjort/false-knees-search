@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>False Knees Search</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="toolbar">
+        <div class="brand">
+          <p class="eyebrow">Archive index</p>
+          <h1>False Knees Search</h1>
+          <div id="indexMeta" class="meta">Loading index</div>
+        </div>
+        <form id="searchForm" class="search" role="search">
+          <label class="searchLabel" for="query">Search</label>
+          <input id="query" name="query" type="search" autocomplete="off" autofocus placeholder="Try a title or line of dialogue" />
+          <button type="submit">Search</button>
+        </form>
+        <fieldset class="filters" aria-label="Search fields">
+          <label><input type="checkbox" name="field" value="titleText" checked /> Title</label>
+          <label><input type="checkbox" name="field" value="comicText" checked /> Comic</label>
+          <label><input type="checkbox" name="field" value="hoverText" /> Hover</label>
+        </fieldset>
+        <a class="archiveLink" href="https://falseknees.com/archive.html" target="_blank" rel="noreferrer">Archive</a>
+      </header>
+
+      <section class="content">
+        <section class="statusbar">
+          <div id="resultCount">No query</div>
+          <div class="resultTools">
+            <nav id="paginationTop" class="pagination" aria-label="Result pages"></nav>
+            <label class="limit">
+              <span>Show</span>
+              <select id="resultLimit">
+                <option value="48">48</option>
+                <option value="96">96</option>
+                <option value="192">192</option>
+                <option value="0">All</option>
+              </select>
+            </label>
+          </div>
+        </section>
+
+        <section id="results" class="results" aria-live="polite"></section>
+        <nav id="paginationBottom" class="pagination paginationBottom" aria-label="Result pages"></nav>
+      </section>
+    </main>
+    <template id="resultTemplate">
+      <a class="result" target="_blank" rel="noreferrer">
+        <span class="thumbWrap"><img alt="" loading="lazy" width="320" height="240" /></span>
+        <span class="resultText">
+          <span class="resultTitle"></span>
+          <span class="resultDate"></span>
+          <span class="badges"></span>
+        </span>
+      </a>
+    </template>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
